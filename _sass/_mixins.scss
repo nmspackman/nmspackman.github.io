@@ -1,0 +1,6 @@
+@mixin transition-in-out($duration) {
+  transition: $duration;
+  transition-timing-function: ease-in-out;
+  -webkit-transition: $duration;
+  -webkit-transition-timing-function: ease-in-out;
+}

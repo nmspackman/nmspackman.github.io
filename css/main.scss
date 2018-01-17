@@ -1,0 +1,86 @@
+---
+---
+@import '../_sass/_typography.scss';
+@import '../_sass/_colors.scss';
+@import '../_sass/_mixins.scss';
+
+.header {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  padding: 1rem 0;
+  border-bottom: 1px solid $bk;
+
+  h1 {
+    margin: 0;
+  }
+}
+
+.main-content {
+  flex-grow: 1;
+}
+
+nav, footer {
+  display: flex;
+  flex-direction: row;
+
+  ul {
+    list-style: none;
+
+    padding: 0;
+    margin: 0;
+    li {
+      display: inline-block;
+      a {
+        svg {
+          vertical-align: middle;
+          width: 2.5rem;
+        }
+      }
+    }
+  }
+}
+
+footer {
+  justify-content: flex-end;
+}
+
+nav li {
+  @include transition-in-out(200ms);
+
+  a {
+    @include transition-in-out(200ms);
+    padding: 0 1rem;
+    width: 7rem;
+    text-align: center;
+    color: $bk;
+
+
+    svg {
+      @include transition-in-out(200ms);
+    }
+  }
+
+  &:hover:not(.icon) {
+    background-color: $green-highlight;
+    a {
+      color: $wt;
+    }
+  }
+
+  &:hover {
+    svg {
+      fill: $green-highlight;
+    }
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  
+  min-height: 100vh;
+  padding: 0 20px;
+}
+
