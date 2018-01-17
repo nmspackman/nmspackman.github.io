@@ -1,5 +1,5 @@
 name: nmspackman
-url: neilspackman.com
+url: https://neilspackman.com
 markdown: kramdown
 permalink: /blog/:year/:month/:day/:title
 baseurl: /
