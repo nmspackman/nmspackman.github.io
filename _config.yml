@@ -2,3 +2,6 @@ name: nmspackman
 url: neilspackman.com
 markdown: kramdown
 permalink: /blog/:year/:month/:day/:title
+sass:
+  style: compressed
+  sass_dir: _sass
