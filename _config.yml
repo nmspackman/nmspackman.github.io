@@ -2,6 +2,7 @@ name: nmspackman
 url: https://neilspackman.com
 markdown: kramdown
 permalink: /blog/:year/:month/:day/:title
+baseurl: /
 sass:
   style: compressed
   sass_dir: _sass
