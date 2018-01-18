@@ -1,3 +1,5 @@
+@import './_colors.scss';
+
 html { font-size: 62.5%; }  /* =10px */
 header h1   { font-size: 4.4rem; } /* =44px */
 h1 { font-size: 2.4}
@@ -6,4 +8,7 @@ nav { font-size: 2rem; }
 footer { font-size: 1.2rem }
 html {
   font-family: 'Open Sans', sans-serif;
+}
+header, footer {
+  a { color: $bk; }
 }

@@ -74,12 +74,13 @@
                 <li><a href="/contact" class="disabled">Contact</a></li>
                 <li><a href="/blog">Blog</a></li>
                 <li><a href="/projects" class="disabled">Projects</a></li>
-                <li><a href="javascript:void(0);" class="hamburger" onclick="showMenu()">&#9776;</a></li>
               </ul>
+              <a href="javascript:void(0);" class="hamburger" onclick="showMenu()">&#9776;</a>
             </nav>
           </div>
         </header>
       </div>
+      <div class="slide-menu"></div>
       <div class="main-content">
         {{ content }}
       </div>
@@ -89,3 +90,18 @@
     </div>
   </body>
 </html>
+
+<script>
+  const navElement = document.querySelector('.nav-container nav');
+  const middleMenuElements = document.querySelectorAll('nav li:not(:first-child):not(:last-child)')
+  const slideMenu = document.querySelector('.slide-menu');
+  function toggleMenu() {
+    if (navElement.classList.contains('open')) {
+      navElement.classList.remove('open');
+    } else {
+      navElement.classList.add('open')
+      // need to copy middle elements and add to slideMenu
+    }
+
+  }
+</script>
