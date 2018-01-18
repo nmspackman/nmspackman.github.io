@@ -3,12 +3,14 @@
     height: 100%;
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
 
     .icons a { margin: 0; }
   }
   header h1 {
     font-size: 5rem;
   }
+  .nav-container ul { padding: 0; }
   .icons {
     margin-right: 1rem;
   }
@@ -17,7 +19,7 @@
     right: 2rem;
   }
 }
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 910px) {
   nav {
     display: flex; 
     align-items: center;
