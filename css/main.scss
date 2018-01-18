@@ -4,14 +4,11 @@
 @import '../_sass/_typography.scss';
 @import '../_sass/_colors.scss';
 @import '../_sass/_mixins.scss';
+@import '../_sass/_media.scss';
 
 body {
   margin: 0 auto;
   max-width: 160rem;
-}
-
-body * {
-  box-sizing: border-box;
 }
 
 .header-container {
@@ -21,32 +18,59 @@ body * {
 .site-header {
   height: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: baseline;
 
   padding: 1rem 0;
 
   h1 {
     margin: 0;
   }
+
+  .icons {
+    padding-top: 4px;
+    flex-grow: 1;
+    
+    a {
+      margin-left: 1rem;
+      text-decoration: none;
+      svg {
+        width: 2.5rem;
+        @include transition-in-out(200ms);
+        
+        &:hover {
+          fill: $green-highlight;
+        }
+      }
+    }
+  }
 }
+
+.site-header a { @include transition-in-out(200ms); }
 
 .main-content {
   flex-grow: 1;
 }
 
-nav {
+.nav-container {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  margin-bottom: 1.2rem;
+  flex-grow: 1;
+  // align-self: center;
+
   ul {
     li {
       margin-right: 2rem;
     }
   }
+
+  a.hamburger {
+    display: none;
+  }
 }
 
-nav, footer {
+.nav-container, footer {
   ul {
     list-style: none;
 
@@ -56,11 +80,6 @@ nav, footer {
       display: inline-block;
       a {
         color: $bk;
-        
-        svg {
-          vertical-align: middle;
-          width: 2.5rem;
-        }
       }
     }
   }
@@ -72,34 +91,21 @@ footer {
   justify-content: flex-end;
 }
 
-nav li {
-  @include transition-in-out(200ms);
-
-  a {
+.nav-container {
+  li {
     @include transition-in-out(200ms);
     
-    svg {
-      @include transition-in-out(200ms);
-    }
-  }
-
-  &:hover:not(.icon) {
-    border-radius: 2px;
-    background-color: $green-highlight;
-    a {
-      color: $wt;
-    }
-  }
-
-  &:hover {
-    a.disabled {
-      pointer-events: none;
-      cursor: pointer;
-      background-color: gray;
-    }
-
-    svg {
-      fill: $green-highlight;
+    &:hover {
+      border-radius: 2px;
+      background-color: $green-highlight;
+      a:not(.disabled) {
+        color: $wt;
+      }
+      a.disabled {
+        pointer-events: none;
+        cursor: pointer;
+        background-color: gray;
+      }
     }
   }
 }
