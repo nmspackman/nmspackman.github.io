@@ -1,4 +1,10 @@
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 390px) {
+  header h1 {
+    font-size: 4.4rem;
+  }
+}
+
+@media screen and (max-width: 565px) {
   header.site-header {
     height: 100%;
     display: flex;
